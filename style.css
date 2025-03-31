@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
+
+  
+/* Main */
+
+
+
+.hud {
+    position: absolute;
+    left: 2.5vh;
+    bottom: .5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* zoom: 700%; */
+    width: fit-content;
+    height: fit-content;
+    border-radius: .5vw;
+}
+
+.car_Hud {
+    position: absolute;
+    left: 8vw;
+    bottom: 2.5vw;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    /* zoom: 700%; */
+    width: fit-content;
+    height: fit-content;
+    border-radius: .7vw;
+}
+
+#speedIndicator {
+    position: relative;
+    text-align: center;
+    left: 7.2vw;
+    bottom: 2.6vw ;
+    justify-content: center;
+    align-items: center;
+    border-radius: .25vw;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(0, 0, 0, 0.616);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.849);
+    box-shadow: 0 0 .2vw rgba(0, 81, 255, 0.685);
+    width: 7vw;
+    
+}
+
+.speed {
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 33px;
+}
+
+.speedunit {
+    color: rgba(255, 255, 255, 0.842);
+    font-size: 15px;
+    text-transform: uppercase; 
+}
+
+#StreetIndicator-Car {
+    position: absolute;
+    left: 1.5vw;
+    bottom: 12.3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.548);
+    box-shadow: 0 0 .2vw #925cff;
+    /* zoom: 700%; */
+    padding-left: 5px;
+    padding-right: 7px;
+    width: fit-content;
+    height: 1.9vw;
+    font-size: 15px;
+    margin-left: 0;
+}
+
+#StreetIndicator {
+    padding-left: 5px;
+    padding-right: 7px;
+    width: fit-content;
+    height: 2vw;
+    font-size: 15px;
+}
+
+.streetName {
+    color: white;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.PlayerId {
+    color: rgb(169, 102, 236);
+    font-weight: 1500;
+    font-family: 'Russo One', sans-serif;
+}
+
+#IdIndicator {
+    padding-left: 5px;
+    padding-right: 7px;
+    width: fit-content;
+    height: 1.8vw;
+    font-size: 15px;
+}
+
+.carHudContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .40vw;
+    margin-left: 5px;
+    background-color: rgba(0, 0, 0, 0.718);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.863);
+    box-shadow: 0 0 .2vw #925cff;
+    width: 2.2vw;
+    height: 2.1vw;
+    overflow: hidden;
+}
+/* Container */
+
+.hudContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .40vw;
+    margin-right: .09vw;
+    margin-left: .09vw;
+    background-color: rgba(0, 0, 0, 0.712);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.87);
+    box-shadow: 0 0 .1vw #925cff;
+    width: 2vw;
+    height: 2vw;
+    overflow: hidden;
+}
+
+.hudContainerStreet {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .25vw;
+    margin-right: .2vw;
+    margin-left: .2vw;
+    width: fit-content;
+    height: fit-content;
+    overflow: hidden;
+}
+
+/* Container Hud Elements (Icons) */
+
+.hudIcon {
+    display: flex;
+    z-index: 3;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+}
+
+.hudIconLocation {
+    position: relative;
+    margin-top: 5px;
+}
+
+/* ProgressBar */
+
+.hudProgress {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+}
+
+.hudProgressInside {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    transition: all 0.3s;
+    filter: blur(.04vw);
+    border-radius: .24vw;
+}
+
+.mic-speak-anim {
+    animation: 1.5s ease 0s infinite mic-talking;
+}
+
+@keyframes mic-talking {
+    0%, 50%, 100% { transform: scale(1, 1); }
+    30%, 80% { transform: scale(1.08, 1.05); }
+}
+
+/* Progressbar Classes */
+
+.micVal {
+    background-color: #925cff;
+}
+
+.healthVal {
+    background-color: #925cff;
+}
+
+.shieldVal {
+    background-color: #925cff;
+}
+
+.hungerVal {
+    background-color: #925cff;
+}
+
+.thirstVal {
+    background-color: #925cff;
+}
+
+.staminaVal {
+    background-color: #925cff;
+}
+
+.waterVal {
+    background-color: #925cff;
+}
+
+.fuelVal {
+    background-color: #925cff;
+}
+
+.motorVal {
+    background-color: #925cff;
+}
+
+.seatbeltVal {
+    background-color: #925cff;
+}
+

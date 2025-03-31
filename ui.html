@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./js/functions.js"></script>
+    <script src="./js/index.js"></script>
+    <title>scripts</title>
+</head>
+    <body>
+        <div class="hud">
+            <div id="MicIndicator" class="hudContainer mic">
+                <div class="hudIcon">
+                    <img id="talkingIcon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACmElEQVR4nO2aPWsUQRiAp1EjmJhITKUBv4jJbxCsbNLaSEBNIYIERMk/UIxERRELC0mjwSoRNbGKioiCaGOhRD31sFGL08avCOojL/dGhuH0srl3dvfiPrBwvHv7zjy7Ox83c84ZA3QB+4HrwHPgsx7y+ZqeW+vyCtAGjGil6yHfOQa0ujwBbAGekhx5Sn0uDwC9wEcWzwegJ2uJNcArGqcEtGcpchY7Tmcl0Q18NxSRXOuyEBnGnkNZiNyOIHIzC5E3EUTKWYjMRRCZc3kCWAFM16jolJxzzQJVkRs1RKZzJ0IkXCESgaKNxAY4B5xPu40AJ4ETliLlcLBKSaRsOkgmTWjVRsiJSMPjCGmILJlXiyYVeQJU0p40AhUp21LkFvALaAnuljWvvfwrNTZjKXJZk24I5KyZ8fJv0ti4pchhTbq7RsySg17+wTBmIdKnSSe82HrjxQdpc38WH4ArGu81E9HEL4FPwGovdsZQ5JSXt12XVUumEpp8SAsc8WIdurjWKC/8BTpgVOMHYohIL/Ie+BK8Alt12dNkyZTqK/sVeOf3ktYyO7Xwe/5UA9isY01SnvltAFgG3NFzu6JIeIWNa0EXgngrcFTbUT3kO0eAVUGOMfMut84+yIN5GWB5cL4T2AdcBWa9jZ5Zjcm5zhqTzHkJyd0WXcTrVR5pwXcbWbPVNiGvqvDQ7xVTQZ/MJa2ANM7jSbYG9GaM6rXCxUx3sIAB4K1WRl6hCWCPTGeCuVkLsBHYC0x6W3Ry7YDLA1QrOaSDZkhFj5CSXhOnizXaivvXlsOw+bQjJn+zcM0GhUjOKJ5Iwf8M0K/zIsufut+A+8D2tCR26NJQLH4C29IQkbsWm6k0RBbywynkh/6DaKHH46QV+w17SmNt+cGg7AAAAABJRU5ErkJggg==" style="width:65%;height:65%">
+                </div>
+                <div class="hudProgress">
+                    <div class="hudProgressInside micVal"></div>
+                </div>
+            </div>
+            <div id="HealthIndicator" class="hudContainer health">
+                <div class="hudIcon">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACDUlEQVR4nO3ZvWsTYRzA8bNWoYqigv+B1lIUBQUnxc1FUBwcOzopKuLLqgi6KgWF4mIVBP8DG118QQWhFEVxcawvIEg6+EY+cvgUQrweueSa3AP5wkGG5Ec+XPLk8lySDBo0aNCgKodtuIAa3mEBPzGPx7iEnQXm7cLl8Nr5MGshzJ7BeYyWCdiDR9rvCfbnzDuApwXm1bC7G8AqTKKheOlrbmGkad4IpjqYtTjvBoaLIjaGU95tz8OsTXhRwrwaNhQ5E2UgFnsWQGVVa+vMhI9T1bvezhe7k+9Er2vkLgAFV6d+N7MUYkx8jWZBLoqvc1mQ9Nc0th5mQT6Ir/dZkLr4qmdB0ou22PqRBfkqvj5nQebE12wW5L74upcFOSu+TmdBtouvsf8gAfNGPM1lIgLklHg6mQdZmy5pqt8XrFsSEjBnVL8TuYgAGcZr1W227U0I7Ah7TFWrnq6ubSGaMEcr9re3gWOFEE2Yq6rTlY4QAbISd/stwB0MdQwJmCHc7iNiqmtEC+ZmHxCTWFEKogV0HL97APiT7vyXDmjBHMS3ZUR8x6FlRTRhtuLVMiBeYktPEC1XAOmNn18lANKP6zWs7imiBbS3y62kj9iXVCGsSXfIO/x9yL+K7Uc4gk9tANLnHE6qnH93qKZzEA+wOYklTLRcQaePJ5IYwzjehmM8iTmsT49+v49BSY/7C4NWh4chZ3uhAAAAAElFTkSuQmCC" style="width:65%;height:65%">
+                </div>
+                <div class="hudProgress">
+                    <div class="hudProgressInside healthVal"></div>
+                </div>
+            </div>
+            <div id="ShieldIndicator" class="hudContainer shield">
+                <div class="hudIcon">
+                    <img src="shielder.png" style="width:65%;height:60%">
+                </div>
+                <div class="hudProgress">
+                    <div class="hudProgressInside shieldVal"></div>
+                </div>
+            </div>
+            <div id="HungerIndicator" class="hudContainer hunger">
+                <div class="hudIcon">
+                    <img src="hunger.png" style="width:70%;height:52%">
+                </div>
+                <div class="hudProgress">
+                    <div class="hudProgressInside hungerVal"></div>
+                </div>
+            </div>
+            <div id="ThirstIndicator" class="hudContainer thirst">
+                <div class="hudIcon">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADFklEQVR4nNWaXWiOURzAH19rZilc0DYkUpJ8JBdDXErSIjeurHHhc7QkFxsuFClLiRlaKEnKx9XyTTHGxdgkdxQ2iebjwud+OvzXnmbnPO/znnOe93l/9dZTz/89//9vz3vOcz4WBB4BhgDHgUZ1HeQrwD762BvkI8ByoCckoq5XBvkEMBXo5n8+A9OCfAAYDrSj5wlQGKQdoIFoDgdpBlhB5lQEaQQoAz7EEPkITAzSBDAIuEp8bqjvBmkB2Ez2rA/SADAJ+GIh8hWYkmuJwcBtQ5HngZlAR4TMLdVWkEORTYbiXgDFEtecwZPZmCuJcZq3t+IbMFviVpMZqq2xuRA5YyiqVmImA5/InFNJSyzoNyEM8xQokP5zh3j0AIuSkhgKtGkK+Q2US9wGsqNd5UhCZIuhiHqJGR/zJ5Vsx+ffzPaNJvnL0Ch1GTs6gSKfIjVRk8AYo1QUW31JjAC6NEnvy3yrGHjrSKTTy1MBthuS9nbwPbhlm2uJIuCdJtkliSmReZNLulS/dClSZUg2X2IO4Yc1LkVaNUla5f5oyxmwiRZXEjMMSVZJTB1+me5CRNeB1QuvUHYTXY1UOupciKi500CclfuL8U+brcQYw+Tw764hcDQBkR5Vi43IUkPDoyTmNcmwxMdL8FVocZUUNTYiBzSNPpD78xIU2W8jckzT6F25vzBBkQYbkXrTKALMSlDkoI3ITk2j7+X+SMOo5podvjalyyQmas/KFRW2G9M6qjxN3XWUZC0ihT7XNHwzNASrkyifdFhJSKG7MlhQVXoWqXUhMgH4YThGK4hxUpUN39WujLWIFHnSkKip94xD/eWAn45FGp1IhJaxpn2qc70HnLJ+uSKbdbZ0qz7oTEQKXBeR9KE6QgjFl6plKnDPQqTSqUSouNMRiX8BJ/oJlWcp0eRFQooqiHFW+Aw4YtgnNtEMDPMmIjJqeXsRf1xI7B8KZFex2vEIpX6Wu3NyBAfMlU5uSwswJ3GBAZ7OMuB6zCFXxV6T5XR6ztqDvknmWhndHqvpvryZ1UddP1LHa7JzWeoy+R8s5cEWON0JaAAAAABJRU5ErkJggg==" style="width:65%;height:65%">
+                </div>
+                <div class="hudProgress">
+                    <div class="hudProgressInside thirstVal"></div>
+                </div>
+            </div>
+             <div id="StaminaIndicator" class="hudContainer stamina">
+                <div class="hudIcon">
+                    <img src="running.png" style="width:100%;height:80%">
+                </div>
+                <div class="hudProgress">
+                    <div class="hudProgressInside staminaVal"></div>
+                </div>
+            </div> 
+            <div id="WaterIndicator" class="hudContainer water">
+                <div class="hudIcon">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACXUlEQVR4nO3YS4hOcRjH8XFvmtw1C5qFSxYijJkpt6zGZWFlJSsWyiQrkVsptw1CYYNSElZjy0ZSlGxIkSxcEkPutxmXj07+Mr3eM+eceS8jzrfeenvP73n+v6f3//wvp6YmJycnJycnJyfn/wVTsRKTS8jRH8twGldxGYcwq7xufw84IAx4yW8+obUXucbhmuJ8x1EMKpfx0diIBzEDvsPsDPlG4q5kTpZqfDqO4WOKwV5hRsq8B6VnSW/m5VJcDH9lFjowJSH/ELzNkPN8WuOjsAkPlcZjjO9hnMaM+TrSmJ+EJykTvsEZtKEzRnMfY2PGWpCxgM9pCtiekOQRjmAhBneL29dDzG2MKTLWxIwF3EtTwPIigTexA03oFxM3Isz7OG5geJG4OxkKOJhYQEi6DuewHhNSBf2MW5Ng4ArqCmJWpDT/Hg01lQQDcSvByIVo9SmIO5wQ0xVtmhU1381M1BtJtEfFFsS14UXM9J1XLfN1OCsdp6J9pubPfaEVa7EqOgfF9VwlzDfgumycqJrBBPPz8UzvONDX5leHJiuFLX1hPJqvxwuO0jsxDUPDHWF3zOEv0u4K2mFBW1ftAvbgNT6EO0FjjK4pPP+QpM2JI1qHw+l0ZgptCzajuczaxqhXogUjSVsYOAdfw9ztDLex2iK62vDsV0N3lVnbGbTfMDdLAduKNOHLsJseCJ/28JsqabdmKaAZX/w9dEULQ+oCQhGLS9ioyslTLMpkvlsR9dgfc+D6xXPsje7CFdLW98p8kSNzS3iRFTXXhvC9ucgJsyLanJycnJycf4ofNm/8ZrmOnrgAAAAASUVORK5CYII=" style="width:65%;height:65%">
+                </div>
+                <div class="hudProgress">
+                    <div class="hudProgressInside waterVal"></div>
+                </div>
+            </div>
+
+            <div id="IdIndicator" class="hudContainer thirst">
+        	    <i class="" style="color: #ba64f7; margin-right:5px; font-size : 20px"></i><p>  </p><span class="PlayerId">0</span>
+      	 	</div>
+
+            <div id="StreetIndicator" class="hudContainer water">
+                <div class="hudIconLocation">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAADAklEQVR4nO2au2sVQRSHj6iIen1ECVhYKFFiwMLGRohG0BgfoMYX+KiM+QNSK4iCSS8o2NgpBi00CBqvYLSyEGIEExUsBEGI72fi65NxRwhZYrIzOzuzufvBwm3u/Z3fSXbmzDkjUlBQUFBQ4BSgBGwBOoAuYAB4C3zXj/rcD1wD2oHN6juSZ4Ap2kgnMERyvgGXgCb1W5IngD1AH+nRCzRL6ADLgTLu6AaWSYgAu4D3uOcjsF8Ce9ePkz0d3tcGIvNn8ccZr0kg2rJ8c9KX+X2EwwEfq/0nwuEDUJNlAsqER3dW5ncTLjuzWPX7CJdep7sCUW1vy02gBagFZutnBXBEV3q2bHKZgE6LwNQJsH4CGmuBJxY6F12Zn2N4qlPcAeYn0KoCegy1vgKzQvr3H0hiflQSnhpqNrpIQIdhMPUWmg2GmqfSdS9/g1GdnMz3ZsOa42o6rkdguDC1iCVAq4Fuv61uDOC1QSC1YoneIpMyaKsbAxg2CKSUUkM1KUO2ujF099ZHAuYa6A7b6sbQrWsfr0Cdge4bW90Yej/PyyL42FY3BnDdIJBbYglw20C3y1Y3hiouMGO9GAKsM9Q8Yao5JsBWw2BU/VBloLcAeGao2ZRUb1z0sfWLYUA9SZKgzd811Prs5DCkAC5jjjrYNMg4qFfG4i+v6BRXAI3YU9Yre50uckr6c6vhgjeaDa5bYo8Il4fOByXAdsJlm1Pz/6jotrgCWBrYYERNjJdIlgDNwG/fznUMezM1H9hwtF18QbQrnPdo/kIIdwSmAzc8mFc1wwwJAaKZwYOM9/t5EhJAtUUfPwnPgUUSIkAN8Mqh+cE0ukxOAVY7qhHUyGuN5AGia7E/UjT/E9gheQI4mFKhpH7jsOQR4FgKCTgqeQY4bWH+nOQdYCpwxcC8GsZOk8kAMBO4l8D8fdWDlMkEsFANLCZgXvUDq2UyAiwGXvzH/MvMz/VZA6wE3o1x23OVVAJEV19GXrhSk+eNUkkQXbb+pQudQ1KJAG3q8R1HQYFULn8A2YI4JK15o+AAAAAASUVORK5CYII=" style="width:25px;height:25px">
+                </div>
+                <span class="streetName">Spain Avenue II</span>
+            </div>
+        </div> 
+        
+        <div id="StreetIndicator-Car" class="hudContainer water">
+            <div class="hudIconLocation">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAADAklEQVR4nO2au2sVQRSHj6iIen1ECVhYKFFiwMLGRohG0BgfoMYX+KiM+QNSK4iCSS8o2NgpBi00CBqvYLSyEGIEExUsBEGI72fi65NxRwhZYrIzOzuzufvBwm3u/Z3fSXbmzDkjUlBQUFBQ4BSgBGwBOoAuYAB4C3zXj/rcD1wD2oHN6juSZ4Ap2kgnMERyvgGXgCb1W5IngD1AH+nRCzRL6ADLgTLu6AaWSYgAu4D3uOcjsF8Ce9ePkz0d3tcGIvNn8ccZr0kg2rJ8c9KX+X2EwwEfq/0nwuEDUJNlAsqER3dW5ncTLjuzWPX7CJdep7sCUW1vy02gBagFZutnBXBEV3q2bHKZgE6LwNQJsH4CGmuBJxY6F12Zn2N4qlPcAeYn0KoCegy1vgKzQvr3H0hiflQSnhpqNrpIQIdhMPUWmg2GmqfSdS9/g1GdnMz3ZsOa42o6rkdguDC1iCVAq4Fuv61uDOC1QSC1YoneIpMyaKsbAxg2CKSUUkM1KUO2ujF099ZHAuYa6A7b6sbQrWsfr0Cdge4bW90Yej/PyyL42FY3BnDdIJBbYglw20C3y1Y3hiouMGO9GAKsM9Q8Yao5JsBWw2BU/VBloLcAeGao2ZRUb1z0sfWLYUA9SZKgzd811Prs5DCkAC5jjjrYNMg4qFfG4i+v6BRXAI3YU9Yre50uckr6c6vhgjeaDa5bYo8Il4fOByXAdsJlm1Pz/6jotrgCWBrYYERNjJdIlgDNwG/fznUMezM1H9hwtF18QbQrnPdo/kIIdwSmAzc8mFc1wwwJAaKZwYOM9/t5EhJAtUUfPwnPgUUSIkAN8Mqh+cE0ukxOAVY7qhHUyGuN5AGia7E/UjT/E9gheQI4mFKhpH7jsOQR4FgKCTgqeQY4bWH+nOQdYCpwxcC8GsZOk8kAMBO4l8D8fdWDlMkEsFANLCZgXvUDq2UyAiwGXvzH/MvMz/VZA6wE3o1x23OVVAJEV19GXrhSk+eNUkkQXbb+pQudQ1KJAG3q8R1HQYFULn8A2YI4JK15o+AAAAAASUVORK5CYII=" style="width:25px;height:25px">
+            </div>
+            <span class="streetName">Spain Avenue II</span>
+        </div>
+
+        <div class="car_Hud">
+            <div id="speedIndicator">
+                <span class="speed">90</span>
+                <div class="speedunit">KMH</div>
+            </div>
+            <div id="MotorIndicator" class="carHudContainer motor">
+                <div class="hudIcon">
+                    <img src="engine.png"style="width:75%;height:60%">
+                </div>
+                <div class="hudProgress">
+                    <div class="hudProgressInside motorVal"></div>
+                </div>
+            </div>
+            <div id="FuelIndicator" class="carHudContainer fuel">
+                <div class="hudIcon">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAADcElEQVR4nO2aW4hOURTHFzWkcY0aZkwJmYcxDY15MCkUD94MyS0kSs2LyOVF0Ywkk1sRDy55UPKCckny5sHlYbyQEsOI0GTIXcxPq2/PdBznfOd8c853Zn/znV/Nw5zZe83+r73P3muvdURSUlJSUlJSUlIKF6AEWAIcB9qAN8BPgvkthQwwBNgJvKVv/JFCBWgAnhCNbrEdYBgw1rXcW3T5EgNiM0Ad8Bi4Bgwyz3bEIdxKBwAVwCJgE3AU+OUYa5NpMwJ4NSAcAIwEVgDngdcBY/0KVJl+i33a3AKWAxN1gxRbAWYCp4AvOU7YA90DjI3LjufvgUaxHaAWuKK7L32nxdiqBD4DV4EysRmgFDgU086tNhqM3eqezdH25f6UeHmmm6HYDrAW+E5+OC02A2yL+K4H0Q6MERsBdpNfzukRKjYC7CH/9IbGxShemS02QnKskyJ3wF4pcgdclCJ3wEOxDTKpqaT4BgwWyyK+bpKlUmwAaMzhkhMmUxuWBTaInx8i1te7+kbN9pg+k4DDmpGN6IAmG/J1nwIG+RKY4tN/KfAjggNak1dtAKaZmQ0SP1mCV1CQE/04Jv2YuGwPGFyH38x72KsJkQ/0Ynv+1brQSwjwKOrMe9idCjzPQbyeODWSJMBw4G4c4o0jV5nEqOb8r7uSnHZFgmRqcDejijdVnl0mmdlXdAWOSlL8YOBC1HdeszfAHaKhtcAJiYlXgBMxzPxQU7aOgpbIxkuSkClCRhJv7Oxz9dPz/whQb/aWcmCNEelFZ08glRjA5pjEV7hC4C6/jA5w0Ef8jLyI9MMUJ7vjOOqAZlfflT7tWgtFfEcO4kvM5yo9tHlVcmwSvyHEtVaX8KyQ9pa5+q62Wfw8Vz0+shOA267XpsRW8ePMP85Wm/dyQn0Wm1Wu1bTFSvGKqdz68c5UYZtzcYLLZpezmGmb+LIs93K98lY72oZyggl5Pzja7LdSvGPj80LTXHPERRgnAOsdf9MYoNw8P2CVeAW45OOAM+JDkBOAe47nZ60Vr2QJP+dKFnyc8BHY6vhdN8HpWcTXSn9DZua8GB2ir5cTnNwHTlorXvEbuYQkhBPsFR+HAxwXpzBpbj0Z6sQmyAzqv58+2FkIvAj4sKn3SB2QkDn/tQhywwRQneZE0O97S/t7fCkpKSkpKfIPfwEYbCtrbtcwDwAAAABJRU5ErkJggg==" style="width:65%;height:65%">
+                </div>
+                <div class="hudProgress">
+                    <div class="hudProgressInside fuelVal"></div>
+                </div>
+            </div>
+            <div id="BeltIndicator" class="carHudContainer belt">
+                <div class="hudIcon">
+                    <img src="belt.png" style="width:65%;height:65%" > 
+                </div>
+                <div class="hudProgress">
+                    <div class="hudProgressInside seatbeltVal"></div>
+                </div>
+        </div>
+    </body>
+</html>
